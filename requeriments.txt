@@ -2,3 +2,4 @@ Flask
 Flask_PyMongo
 Flask-cors
 python-dotenv
+marshmallow

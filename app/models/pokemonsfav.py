@@ -1,43 +1,33 @@
-from app import mongo 
-
-class pokemonsfav:
-    collection = mongo.db.pokemonsfav
-
+from app import mongo
+class Pokemon_saved:
+    collection = mongo.db.pokemons
     @staticmethod
     def find_all():
-        pokemonsfav = pokemonsfav.collection.find()
-        return list(pokemonsfav)
+        pokemons_saved = Pokemon_saved.collection.find()
+        return list(pokemons_saved)
     
     @staticmethod
-    def find_by_id(pokemonsfav_id):
-        pokemonsfav = pokemonsfav.collection.fin_one({
-            "_id": pokemonsfav_id
-        })
-        return pokemonsfav
+    def find_by_id(pokemon_saved_id):
+        pokemon_saved = Pokemon_saved.collection.find_one({"_id": pokemon_saved_id})
+        return pokemon_saved
     
-
-
     @staticmethod
     def create(data):
-        pokemonsfav = pokemonsfav.collection.insert_one(data)
-        return pokemonsfav.inserted_id
+        pokemon_saved = Pokemon_saved.collection.insert_one(data)
+        return pokemon_saved.inserted_id
     
-
-
     @staticmethod
-    def update(pokemonsfav_id, data):
-        pokemonsfav = pokemonsfav.collection.update_one({
-            "_id": pokemonsfav_id
+    def update(pokemon_saved_id, data):
+        pokemon_saved = Pokemon_saved.collection.update_one({
+            "_id":pokemon_saved_id
         },{
-            "$set": data
+                "$set":data
         })
-        return pokemonsfav
+        return pokemon_saved
 
-       
-       
     @staticmethod
-    def delete(pokemonsfav_id):
-        return pokemonsfav.collection.delete_one({"_id": pokemonsfav_id})
+    def delete(pokemon_saved_id):
+        return Pokemon_saved.collection.delete_one({"_id":pokemon_saved_id})
 
 
 
