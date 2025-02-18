@@ -1,9 +1,9 @@
-from marshmallow import Schema, fields, validate
+from marshmallow import Schema, fields, ValidateError
 
 class FavoritePokemonSchema(Schema):
     name = fields.Str(
         required=True,
-        validate=lambda x: len(x) > 0,
+        validate=lambda x :len(x)> 0,
         error_messages={
             "required": "El nombre del Pokémon favorito es requerido"
         }
@@ -13,13 +13,6 @@ class FavoritePokemonSchema(Schema):
         validate=lambda x: len(x) > 0,
         error_messages={
             "required": "El tipo de Pokémon favorito es requerido"
-        }
-    )
-    favorite_move = fields.Str(
-        required=False,
-        validate=lambda x: len(x) > 0,
-        error_messages={
-            "required": "El movimiento favorito del Pokémon es requerido"
         }
     )
     is_legendary = fields.Bool(
