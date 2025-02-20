@@ -6,6 +6,7 @@
 from flask import Blueprint, request, jsonify
 from app.schemas.pokemons_schema import PokemonSchema
 from marshmallow import ValidationError
+from app.toolds.respoonse_manager import ResponseManager
 from app.models.factory import ModelFactory
 from bson import ObjectId
 
@@ -36,7 +37,10 @@ def get_pokemon(pokemon_id):
         return jsonify("Pokémon no encontrado", 404)
     return jsonify(pokemon, 200)
 
-
+@bp.route("/<string:user_id>", methods=["GET"])
+def get_all(user_id):
+    data = FP_MODEL.find_all(user_id)
+    return RM.success(data)
 
 
 

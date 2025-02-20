@@ -1,37 +1,21 @@
 from app import mongo
-class Pokemon_saved:
-    collection = mongo.db.pokemons
-    @staticmethod
-    def find_all():
-        pokemons_saved = Pokemon_saved.collection.find()
-        return list(pokemons_saved)
+from app.models.super_clase import SuperClass
+from bson import ObjectId
+
+class PokemonFavorites(SuperClass):
+    def __init__(self):
+        super().__init__("pokemon_favorites")
+
     
-    @staticmethod
-    def find_by_id(pokemon_saved_id):
-        pokemon_saved = Pokemon_saved.collection.find_one({"_id": pokemon_saved_id})
-        return pokemon_saved
+    def update(self, object_id, data):
+        raise NotImplementedError("No se puede actualizar")
     
-    @staticmethod
-    def create(data):
-        pokemon_saved = Pokemon_saved.collection.insert_one(data)
-        return pokemon_saved.inserted_id
+    def find_by_id(self, object_id):
+        raise NotImplementedError("No se puede encontrar")
     
-    @staticmethod
-    def update(pokemon_saved_id, data):
-        pokemon_saved = Pokemon_saved.collection.update_one({
-            "_id":pokemon_saved_id
-        },{
-                "$set":data
-        })
-        return pokemon_saved
-
-    @staticmethod
-    def delete(pokemon_saved_id):
-        return Pokemon_saved.collection.delete_one({"_id":pokemon_saved_id})
-
-
-
-
+    def update(self, user_id):
+        data = self.collection.find({"user_id": ObjectId(user_id)})
+        return data
 
 
 

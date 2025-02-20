@@ -43,6 +43,10 @@ def get_pokemon_favorito(pokemon_favorito_id):
         return jsonify({"error": f"Hubo un error al obtener el pokemon favorito: {str(e)}"}, 400)
 
 
+@bp.route("/<string:user_id>", methods=["GET"])
+def get_all(user_id):
+    data = FP_MODEL.find_all(user_id)
+    return RM.success(data)
 
 
 
