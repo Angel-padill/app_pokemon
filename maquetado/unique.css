@@ -1,0 +1,101 @@
+BODY{
+    padding: 0%;
+    margin: 0%;
+}
+
+.bacground{
+    background-color: blueviolet;
+    height: 100vh;
+    width: 100%;
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 30px;
+}
+
+.name{
+    padding: 10px 60px;
+    color: chartreuse;
+    background-color: bisque;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+}
+
+.id-pokemon{
+    color: blueviolet;
+}
+
+.main{
+    display: felx;
+    justify-content: center;
+    align-items: center;
+}
+
+.image.pokemon{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 100%;
+    background-color: rgb(0, 0, 0);
+}
+
+.img-pokemon>img{
+    border-radius: 100%;
+    padding: 10px;
+    background-color: blue;
+}
+
+.footer{
+    margin-top: -70px;
+    padding: 60px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tags{
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.tag{
+    width: fit-content;
+    border-radius: 100%;
+    padding: 10px;
+    text-align: center;
+    color: chocolate;
+    font-size: 10px;
+}
+
+.stats{
+    width: 80%;
+    display: flex;
+    flex-direction: colum;
+}
+
+.title-stats{
+    font-size: 20px;
+    font-weight: bold;
+    color: blanchedalmond;
+    margin: auto;
+}
+
+.tow{
+    display: flex;
+    margin: 10px;
+    margin: auto;
+    padding: 10px;
+}
+
+.stat{
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+
