@@ -8,7 +8,7 @@ class ModelFactory:
         models = {
             "users": User,
             "pokemons": Pokemon,
-            "pokemos_favorites": PokemonFavorites
+            "pokemon_favorites": PokemonFavorites
         }
         if collection_name in models:
             return models[collection_name]()

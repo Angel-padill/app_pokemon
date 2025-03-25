@@ -5,10 +5,10 @@ class Pokemon(SuperClass):
     def __init__(self):
         super().__init__("pokemons")
 
-    def create(self, data):
+    def create():
         raise NotImplementedError("Los pokemones no se pueden crear")
     
-    def delete(self, object_id):
+    def delete(self):
         raise NotImplementedError("Los pokemones no se pueden eliminar")
     
     def update(self, data, object_id):

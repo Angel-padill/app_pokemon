@@ -1,6 +1,7 @@
 from flask import jsonify
 
 class ResponseManager:
+    @staticmethod
     def success(self, data):
         if type(data) == "str":
             data = {
